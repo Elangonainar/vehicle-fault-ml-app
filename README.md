@@ -43,12 +43,12 @@ All 5 classification models were trained on an 80/20 train-test split using stan
 
 | ML Model Name | Observation about model performance |
 | :--- | :--- |
-| **Logistic Regression** | Achieved the highest overall performance (Accuracy: 98.50%, AUC: 0.9993, MCC: 0.9633)[cite: 3, 4]. Physical vehicle sensor degradation follows smooth linear logit trends (e.g., temperature, vibration, voltage drops), which Logistic Regression captures exceptionally well without overfitting[cite: 2, 3]. |
-| **Decision Tree** | Obtained an accuracy of 78.50% and F1 score of 0.8413[cite: 3, 4]. While providing clear interpretability, axis-aligned splits result in stepped decision boundaries that slightly underfit continuous multi-sensor interactions[cite: 2, 3]. |
-| **kNN** | Recorded an accuracy of 83.00% and an AUC of 0.8855[cite: 3, 4]. Distance-based classification performs well after standard scaling, but performance is somewhat bounded by higher-dimensional feature space curvature[cite: 2, 3]. |
-| **Naive Bayes** | Achieved solid performance with 90.50% accuracy, 100% recall, and an AUC of 0.9780[cite: 3, 4]. Assuming conditional independence between automotive sensor channels works surprisingly well for rapid fault screening[cite: 2, 3]. |
-| **Support Vector Machine** | Delivered strong performance with 94.50% accuracy, 0.9910 AUC score, and 0.8633 MCC[cite: 3, 4]. The RBF kernel effectively separates non-linear sensor threshold intersections[cite: 2, 3]. |
-| **Overall Winner for your dataset?** | **Logistic Regression** is the clear winner[cite: 4], achieving superior precision (97.95%), perfect recall (100.00%), and the highest Matthews Correlation Coefficient (0.9633)[cite: 3, 4]. |
+| **Logistic Regression** | Achieved the highest overall performance (Accuracy: 95.00%, AUC: 0.9937, MCC: 0.8746)[cite: 3, 4]. Physical vehicle sensor degradation follows smooth linear logit trends, which Logistic Regression captures effectively without overfitting[cite: 2, 3]. |
+| **Decision Tree** | Obtained an accuracy of 90.00% and F1 score of 92.86%[cite: 3, 4]. While providing clear interpretability, axis-aligned splits result in stepped decision boundaries that moderately capture feature thresholds[cite: 2, 3]. |
+| **kNN** | Recorded an accuracy of 90.00% and an AUC of 0.8918[cite: 3, 4]. Distance-based classification performs well following standard scaling, though bounded by feature space boundaries[cite: 2, 3]. |
+| **Naive Bayes** | Achieved solid performance with 85.00% accuracy, 96.55% recall, and an AUC of 0.9624[cite: 3, 4]. Assuming conditional independence between sensor channels provides a stable baseline for fault screening[cite: 2, 3]. |
+| **Support Vector Machine** | Delivered strong performance with 92.50% accuracy, 100% recall, an AUC score of 0.9687, and 0.8118 MCC[cite: 3, 4]. The RBF kernel effectively separates non-linear sensor threshold intersections[cite: 2, 3]. |
+| **Overall Winner for your dataset?** | **Logistic Regression** is the clear winner[cite: 4], achieving superior accuracy (95.00%), top-tier AUC (0.9937), and the highest overall Matthews Correlation Coefficient (0.8746)[cite: 3, 4]. |
 
 ---
 
@@ -76,8 +76,7 @@ vehicle-fault-ml-app/
 pip install -r requirements.txt
 
 ### 3. Bash command to train the models
-cd model
-python train_models.py
+python model/train_models.py
 
 ### 4. Bash command to run streamlit app
 streamlit run app.py
