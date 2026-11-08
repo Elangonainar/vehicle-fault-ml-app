@@ -32,14 +32,13 @@ def find_file(filename):
     return filename # Default fallback
 
 def train_and_save_models():
-    # 1. Dynamically locate training and test datasets
+    # Dynamically locate training and test datasets
     train_file_path = find_file('vehicle_telematics_full.csv')
     test_file_path = find_file('test_data.csv')
 
     if os.path.exists(train_file_path):
         train_df = pd.read_csv(train_file_path)
     else:
-        # Fallback to test_data if full train set isn't found locally
         train_df = pd.read_csv(test_file_path)
 
     test_df = pd.read_csv(test_file_path)
@@ -50,7 +49,7 @@ def train_and_save_models():
     X_test = test_df.drop(columns=['vehicle_fault_status'])
     y_test = test_df['vehicle_fault_status']
 
-    # 2. Standard Scaling
+    # Standard Scaling
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
@@ -60,7 +59,7 @@ def train_and_save_models():
     os.makedirs(model_dir, exist_ok=True)
     joblib.dump(scaler, os.path.join(model_dir, 'scaler.pkl'))
 
-    # 3. Model Dictionary
+    # Model Dictionary
     models = {
         'logistic_regression.pkl': LogisticRegression(random_state=42),
         'decision_tree.pkl': DecisionTreeClassifier(random_state=42, max_depth=5),
@@ -71,7 +70,7 @@ def train_and_save_models():
 
     results = []
 
-    # 4. Fit, Evaluate, and Save Models
+    # Fit, Evaluate, and Save Models
     for file_name, model in models.items():
         if file_name in ['logistic_regression.pkl', 'knn.pkl', 'support_vector_machine.pkl']:
             model.fit(X_train_scaled, y_train)
