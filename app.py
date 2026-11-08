@@ -34,8 +34,6 @@ to predict vehicle maintenance requirements.
 def get_trained_models():
     # Determine correct model directory path
     model_dir = 'model'
-    if os.path.exists('model/model'):
-        model_dir = 'model/model'
         
     os.makedirs(model_dir, exist_ok=True)
     scaler_path = os.path.join(model_dir, 'scaler.pkl')
