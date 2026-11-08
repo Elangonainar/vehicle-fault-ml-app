@@ -22,6 +22,9 @@ The dataset contains **1,000 instances** and **14 continuous and discrete instru
 
 * **Target Variable**: `vehicle_fault_status` (0 = Normal, 1 = Maintenance Required).
 
+## c. Github repository link
+https://github.com/Elangonainar/vehicle-fault-ml-app.git
+
 ## d. Models Used & Evaluation Metrics Comparison
 
 All 5 classification models were trained on an 80/20 train-test split using standard scaling and evaluated on unseen test data ($N = 200$)[cite: 2, 3]:
