@@ -33,11 +33,11 @@ All 5 classification models were trained on an 80/20 train-test split using stan
 
 | ML Model Name | Accuracy | AUC | Precision | Recall | F1 | MCC |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Logistic Regression** | **0.950** | **0.9937** | **0.9655** | **0.9655** | **0.9655** | **0.8746** |
-| **Decision Tree** | 0.900 | 0.8934 | 0.9630 | 0.8966 | 0.9286 | 0.7680 |
-| **kNN** | 0.900 | 0.8918 | 0.9032 | 0.9655 | 0.9333 | 0.7408 |
-| **Naive Bayes** | 0.850 | 0.9624 | 0.8485 | 0.9655 | 0.9032 | 0.6005 |
-| **Support Vector Machine** | 0.925 | 0.9687 | 0.9062 | 1.0000 | 0.9508 | 0.8118 |
+| **Logistic Regression** | 0.9700 | 0.9979 | 0.9660 | 0.9930 | 0.9793 | 0.9260 |
+| **Decision Tree** | 0.9550 | 0.9564 | 0.9653 | 0.9720 | 0.9686 | 0.8891 |
+| **kNN** | 0.9000 | 0.9327 | 0.8968 | 0.9720 | 0.9329 | 0.7473 |
+| **Naive Bayes** | 0.8950 | 0.9696 | 0.8812 | 0.9860 | 0.9307 | 0.7366 |
+| **Support Vector Machine** | **0.9750** | **0.9975** | **0.9662** | **1.0000** | **0.9828** | **0.9389** |
 
 ---
 
@@ -45,12 +45,12 @@ All 5 classification models were trained on an 80/20 train-test split using stan
 
 | ML Model Name | Observation about model performance |
 | :--- | :--- |
-| **Logistic Regression** | Achieved the highest overall performance (Accuracy: 95.00%, AUC: 0.9937, MCC: 0.8746)[cite: 3, 4]. Physical vehicle sensor degradation follows smooth linear logit trends, which Logistic Regression captures effectively without overfitting[cite: 2, 3]. |
-| **Decision Tree** | Obtained an accuracy of 90.00% and F1 score of 92.86%[cite: 3, 4]. While providing clear interpretability, axis-aligned splits result in stepped decision boundaries that moderately capture feature thresholds[cite: 2, 3]. |
-| **kNN** | Recorded an accuracy of 90.00% and an AUC of 0.8918[cite: 3, 4]. Distance-based classification performs well following standard scaling, though bounded by feature space boundaries[cite: 2, 3]. |
-| **Naive Bayes** | Achieved solid performance with 85.00% accuracy, 96.55% recall, and an AUC of 0.9624[cite: 3, 4]. Assuming conditional independence between sensor channels provides a stable baseline for fault screening[cite: 2, 3]. |
-| **Support Vector Machine** | Delivered strong performance with 92.50% accuracy, 100% recall, an AUC score of 0.9687, and 0.8118 MCC[cite: 3, 4]. The RBF kernel effectively separates non-linear sensor threshold intersections[cite: 2, 3]. |
-| **Overall Winner for your dataset?** | **Logistic Regression** is the clear winner[cite: 4], achieving superior accuracy (95.00%), top-tier AUC (0.9937), and the highest overall Matthews Correlation Coefficient (0.8746)[cite: 3, 4]. |
+| **Logistic Regression** | Achieved high performance (Accuracy: 97.00%, AUC: 0.9979, MCC: 0.9260)[cite: 17]. Smooth linear logit boundaries capture automotive sensor degradation trends effectively[cite: 2, 3]. |
+| **Decision Tree** | Secured strong performance with an accuracy of 95.50% and F1 score of 96.86%[cite: 13]. Recursive axis-aligned partitioning handles multi-sensor threshold interactions efficiently[cite: 2, 3]. |
+| **kNN** | Recorded an accuracy of 90.00% and high recall of 97.20%[cite: 14]. Distance-based classification performs reliably following standard feature scaling[cite: 2, 3]. |
+| **Naive Bayes** | Achieved 89.50% accuracy and an impressive 98.60% recall[cite: 15]. The conditional independence assumption provides a solid probabilistic baseline for fault detection[cite: 2, 3]. |
+| **Support Vector Machine** | Delivered the **top overall performance** with 97.50% accuracy, 0.9975 AUC, perfect 100% recall, and an MCC of 0.9389[cite: 16]. The RBF kernel successfully maps complex non-linear sensor decision boundaries[cite: 2, 3]. |
+| **Overall Winner for your dataset?** | **Support Vector Machine** is the clear winner[cite: 4], achieving superior accuracy (97.50%), a flawless recall of 1.0000, and the highest Matthews Correlation Coefficient (0.9389)[cite: 3, 4, 16]. |
 
 ---
 
